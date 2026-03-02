@@ -5,22 +5,46 @@ import { siteContent } from "@/content/site-content";
 
 export default function Home() {
   const { identity, about, experience, projects, skills } = siteContent;
+  const experienceYears = `${experience.length}+ roles`;
+  const projectCount = `${projects.length}+ projects`;
+  const stackCount = `${skills.reduce((total, group) => total + group.items.length, 0)} skills`;
 
   return (
     <main className="page-shell">
       <SiteHeader />
 
       <section className="hero outlined-card">
-        <p className="eyebrow">{identity.title}</p>
-        <h1>{identity.name}</h1>
-        <p className="hero-copy">{identity.tagline}</p>
-        <div className="cta-row">
-          <a className="button" href="#projects">
-            View Projects
-          </a>
-          <a className="button button-ghost" href={identity.links.resume}>
-            View Resume
-          </a>
+        <div className="hero-grid">
+          <div>
+            <p className="eyebrow">{identity.title}</p>
+            <h1>{identity.name}</h1>
+            <p className="hero-copy">{identity.tagline}</p>
+            <div className="cta-row">
+              <a className="button" href="#projects">
+                View Projects
+              </a>
+              <a className="button button-ghost" href={identity.links.resume}>
+                View Resume
+              </a>
+            </div>
+          </div>
+          <aside className="hero-aside">
+            <p className="eyebrow">Snapshot</p>
+            <ul className="hero-metrics">
+              <li>
+                <span>{experienceYears}</span>
+                Experience timeline
+              </li>
+              <li>
+                <span>{projectCount}</span>
+                Featured builds
+              </li>
+              <li>
+                <span>{stackCount}</span>
+                Production tools
+              </li>
+            </ul>
+          </aside>
         </div>
       </section>
 
@@ -39,9 +63,9 @@ export default function Home() {
         title="Experience"
         subtitle="Roles where I shipped meaningful product improvements"
       >
-        <div className="grid single-column-gap">
+        <div className="grid single-column-gap experience-grid">
           {experience.map((item) => (
-            <article className="outlined-card" key={`${item.company}-${item.role}`}>
+            <article className="outlined-card experience-card" key={`${item.company}-${item.role}`}>
               <div className="card-heading-row">
                 <h3>
                   {item.role} · {item.company}
@@ -65,7 +89,7 @@ export default function Home() {
       >
         <div className="grid two-column-grid">
           {projects.map((project) => (
-            <article className="outlined-card" key={project.title}>
+            <article className="outlined-card project-card" key={project.title}>
               <h3>{project.title}</h3>
               <p>{project.summary}</p>
               <p className="impact">Impact: {project.impact}</p>
@@ -92,9 +116,9 @@ export default function Home() {
       >
         <div className="grid three-column-grid">
           {skills.map((group) => (
-            <article className="outlined-card" key={group.category}>
+            <article className="outlined-card skill-card" key={group.category}>
               <h3>{group.category}</h3>
-              <ul>
+              <ul className="skill-list">
                 {group.items.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}
