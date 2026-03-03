@@ -2,6 +2,7 @@ import { Section } from "@/components/Section";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { siteContent } from "@/content/site-content";
+import Image from "next/image";
 
 export default function Home() {
   const { identity, about, experience, projects, skills } = siteContent;
@@ -18,17 +19,28 @@ export default function Home() {
 
       <section className="hero outlined-card">
         <div className="hero-grid">
-          <div>
-            <p className="eyebrow">{identity.title}</p>
-            <h1>{identity.name}</h1>
-            <p className="hero-copy">{identity.tagline}</p>
-            <div className="cta-row">
-              <a className="button" href="#projects">
-                View Projects
-              </a>
-              <a className="button button-ghost" href={identity.links.resume}>
-                View Resume
-              </a>
+          <div className="hero-main">
+            <figure className="hero-photo-frame">
+              <Image
+                src="/selfie.jpeg"
+                alt="Profile photo placeholder"
+                width={220}
+                height={280}
+                priority
+              />
+            </figure>
+            <div className="hero-intro">
+              <p className="eyebrow">{identity.title}</p>
+              <h1>{identity.name}</h1>
+              <p className="hero-copy">{identity.tagline}</p>
+              <div className="cta-row">
+                <a className="button" href="#projects">
+                  View Projects
+                </a>
+                <a className="button button-ghost" href={identity.links.resume}>
+                  View Resume
+                </a>
+              </div>
             </div>
           </div>
           <aside className="hero-aside">
@@ -54,7 +66,7 @@ export default function Home() {
       <Section
         id="about"
         title="About"
-        subtitle="A quick overview of how I work and what I focus on"
+        subtitle="How I work"
       >
         <article className="outlined-card">
           <p>{about.paragraph}</p>
@@ -64,7 +76,7 @@ export default function Home() {
       <Section
         id="experience"
         title="Experience"
-        subtitle="Computer Science Work Experience"
+        subtitle="Recent roles"
       >
         <div className="grid single-column-gap experience-grid">
           {experience.map((item) => (
@@ -91,7 +103,7 @@ export default function Home() {
       <Section
         id="projects"
         title="Projects"
-        subtitle="Selected work with outcomes and implementation detail"
+        subtitle="Selected work"
       >
         <div className="grid two-column-grid">
           {projects.map((project) => (
@@ -122,7 +134,7 @@ export default function Home() {
       <Section
         id="skills"
         title="Skills"
-        subtitle="Tools and technologies I use to deliver production-ready work"
+        subtitle="Tools & tech"
       >
         <div className="grid three-column-grid">
           {skills.map((group) => (
@@ -141,7 +153,7 @@ export default function Home() {
       <Section
         id="contact"
         title="Contact"
-        subtitle="Open to full-time roles, contract work, and technical collaboration"
+        subtitle="Let's connect"
       >
         <article className="outlined-card contact-card">
           <p>
