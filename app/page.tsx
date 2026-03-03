@@ -106,28 +106,38 @@ export default function Home() {
         subtitle="Selected work"
       >
         <div className="grid two-column-grid">
-          {projects.map((project) => (
-            <article className="outlined-card project-card" key={project.title}>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              <p className="impact">Impact: {project.impact}</p>
-              <div className="tag-row">
-                {project.stack.map((tech) => (
-                  <span key={tech} className="tag">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="link-row">
-                {project.links.live ? (
-                  <a href={project.links.live}>Live Site</a>
-                ) : null}
-                {project.links.repo ? (
-                  <a href={project.links.repo}>Repository</a>
-                ) : null}
-              </div>
-            </article>
-          ))}
+          {projects.map((project) => {
+            const projectLinks = [
+              { label: "Live Site", href: project.links.live },
+              { label: "Repository", href: project.links.repo },
+              { label: "Frontend Repo", href: project.links.frontend },
+              { label: "Backend Repo", href: project.links.backend },
+            ].filter((link): link is { label: string; href: string } =>
+              Boolean(link.href)
+            );
+
+            return (
+              <article className="outlined-card project-card" key={project.title}>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+                <p className="impact">Impact: {project.impact}</p>
+                <div className="tag-row">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="link-row">
+                  {projectLinks.map((link) => (
+                    <a key={link.href} href={link.href}>
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </Section>
 
