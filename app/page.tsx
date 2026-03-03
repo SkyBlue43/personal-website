@@ -7,7 +7,10 @@ export default function Home() {
   const { identity, about, experience, projects, skills } = siteContent;
   const experienceYears = `${experience.length}+ roles`;
   const projectCount = `${projects.length}+ projects`;
-  const stackCount = `${skills.reduce((total, group) => total + group.items.length, 0)} skills`;
+  const stackCount = `${skills.reduce(
+    (total, group) => total + group.items.length,
+    0
+  )} skills`;
 
   return (
     <main className="page-shell">
@@ -61,11 +64,14 @@ export default function Home() {
       <Section
         id="experience"
         title="Experience"
-        subtitle="Roles where I shipped meaningful product improvements"
+        subtitle="Computer Science Work Experience"
       >
         <div className="grid single-column-gap experience-grid">
           {experience.map((item) => (
-            <article className="outlined-card experience-card" key={`${item.company}-${item.role}`}>
+            <article
+              className="outlined-card experience-card"
+              key={`${item.company}-${item.role}`}
+            >
               <div className="card-heading-row">
                 <h3>
                   {item.role} · {item.company}
@@ -101,8 +107,12 @@ export default function Home() {
                 ))}
               </div>
               <div className="link-row">
-                {project.links.live ? <a href={project.links.live}>Live Site</a> : null}
-                {project.links.repo ? <a href={project.links.repo}>Repository</a> : null}
+                {project.links.live ? (
+                  <a href={project.links.live}>Live Site</a>
+                ) : null}
+                {project.links.repo ? (
+                  <a href={project.links.repo}>Repository</a>
+                ) : null}
               </div>
             </article>
           ))}
@@ -135,7 +145,8 @@ export default function Home() {
       >
         <article className="outlined-card contact-card">
           <p>
-            Best way to reach me: <a href={`mailto:${identity.email}`}>{identity.email}</a>
+            Best way to reach me:{" "}
+            <a href={`mailto:${identity.email}`}>{identity.email}</a>
           </p>
           <div className="link-row">
             <a href={identity.links.linkedin}>LinkedIn</a>

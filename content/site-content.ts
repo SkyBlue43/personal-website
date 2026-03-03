@@ -6,6 +6,8 @@ export type Project = {
   links: {
     live?: string;
     repo?: string;
+    backend?: string;
+    frontend?: string;
   };
 };
 
@@ -23,101 +25,118 @@ export type SkillGroup = {
 
 export const siteContent = {
   identity: {
-    // TODO: Replace with your name
-    name: "Your Name",
-    // TODO: Replace with your professional title
-    title: "Frontend Engineer",
-    // TODO: 1 sentence on what you do and who you help
+    name: "Skyler Williams",
+    title: "Full-Stack Engineer",
     tagline:
-      "I build reliable web experiences that help teams ship faster and users accomplish goals with confidence.",
-    // TODO: Replace with your city/state or preferred location format
-    location: "Denver, CO",
-    // TODO: Add your preferred email
-    email: "you@example.com",
+      "I build full-stack web applications that make learning and day-to-day workflows simpler, faster, and more reliable.",
+    location: "Provo, Utah",
+    email: "skyaw2001@outlook.com",
     links: {
-      // TODO: Add your LinkedIn profile URL
-      linkedin: "https://www.linkedin.com/in/your-profile",
-      // TODO: Add your GitHub profile URL
-      github: "https://github.com/your-username",
-      // TODO: Add your resume URL (Google Drive, PDF in /public, etc.)
-      resume: "#"
-    }
+      linkedin: "https://www.linkedin.com/in/skyler-williams-b8b153345",
+      github: "https://github.com/SkyBlue43",
+      resume: "/resume.pdf",
+    },
   },
   about: {
-    // TODO: 3-5 lines about your professional background and strengths
     paragraph:
-      "I care about building products that are both technically solid and genuinely useful. I enjoy collaborating across design, product, and engineering to turn complex requirements into clean, maintainable interfaces."
+      "I am a Computer Science student at BYU with hands-on experience building full-stack applications, teaching software fundamentals, and leading research projects. I enjoy turning complex technical ideas into practical tools people can use immediately. My strengths are clear communication, ownership of end-to-end project flow, and building reliable systems with modern web and cloud tooling.",
   },
   experience: [
     {
-      // TODO: Replace with your latest role
-      role: "Senior Frontend Engineer",
-      // TODO: Replace with company name
-      company: "Company Name",
-      // TODO: Replace with real dates
-      period: "2023 - Present",
+      role: "Head Research Assistant",
+      company: "Brigham Young University",
+      period: "Apr 2025 - Present",
       achievements: [
-        // TODO: Add achievement + metric
-        "Led redesign of core dashboard, reducing time-to-complete key workflow by 35%.",
-        // TODO: Add achievement + metric
-        "Improved Lighthouse performance score from 68 to 95 across top landing pages.",
-        // TODO: Add achievement + metric
-        "Built reusable component system used across 4 product squads."
-      ]
+        "Developed a Chinese tone-learning web application using Next.js, TypeScript, Python, and FastAPI.",
+        "Collaborate weekly with professors, graduate students, and peers to plan and execute research milestones.",
+        "Manage project flow by defining tasks, shipping updates, and communicating progress clearly.",
+      ],
     },
     {
-      role: "Frontend Engineer",
-      company: "Previous Company",
-      period: "2020 - 2023",
+      role: "Computer Science Teaching Assistant",
+      company: "Brigham Young University",
+      period: "Aug 2024 - Present",
       achievements: [
-        "Implemented accessibility updates that improved WCAG compliance across customer-facing flows.",
-        "Partnered with backend team to define API contracts for new onboarding experience.",
-        "Created internal documentation that reduced onboarding time for new engineers."
-      ]
-    }
+        "Support students one-on-one with Conda setup, terminal workflows, and Python development.",
+        "Teach lab sections four times per week covering Python fundamentals and problem-solving strategies.",
+        "Grade assignments and projects with actionable feedback to help students improve quickly.",
+      ],
+    },
+    // {
+    //   role: "Youth Counselor",
+    //   company: "For the Strength of Youth",
+    //   period: "Jun 2024 - Aug 2024",
+    //   achievements: [
+    //     "Taught and mentored groups of 10-30 youth in weekly sessions focused on leadership and personal development.",
+    //     "Worked closely with a co-counselor to plan daily support and guidance strategies for participants.",
+    //   ],
+    // },
+    // {
+    //   role: "Full-Time Volunteer Representative",
+    //   company: "The Church of Jesus Christ of Latter-day Saints",
+    //   period: "Jul 2020 - Jun 2022",
+    //   achievements: [
+    //     "Led groups of up to 30 volunteers, ran weekly training meetings, and tracked progress through regular reports.",
+    //     "Collaborated with diverse companions in high-commitment service environments across Colorado and Sao Paulo, Brazil.",
+    //     "Provided daily technical troubleshooting support for volunteers in the field.",
+    //   ],
+    // },
   ] as ExperienceItem[],
   projects: [
     {
-      // TODO: Replace with real project name
-      title: "Project One",
-      // TODO: 1-2 lines describing what this project is
+      title: "JWT Pizza",
       summary:
-        "A modern analytics platform that helps operations teams spot issues and act quickly.",
-      // TODO: Replace with real stack
-      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-      // TODO: Add tangible impact/result
-      impact: "Cut report generation time from minutes to seconds for internal users.",
+        "A school project that focused on automation, cloud infrastructure and logging/metrics",
+      stack: ["Node.js", "JavaScript", "React", "AWS"],
+      impact:
+        "Learned how to create a full stack application with a pipeline and cloud infrastructure",
       links: {
-        // TODO: Add deployed URL
-        live: "https://example.com",
-        // TODO: Add repository URL
-        repo: "https://github.com/your-username/project-one"
-      }
+        backend: "https://github.com/SkyBlue43/jwt-pizza-service",
+        frontend: "https://github.com/SkyBlue43/jwt-pizza",
+      },
     },
     {
-      title: "Project Two",
+      title: "Tweeter Clone",
       summary:
-        "A responsive appointment booking interface focused on low-friction mobile interactions.",
-      stack: ["React", "TypeScript", "Framer Motion"],
-      impact: "Increased booking completion rate by 18% after launch.",
+        "A school project that focuses on full stack, software architecture of tweeter",
+      stack: ["AWS Lambda", "Dynamo DB", "Typescript", "React"],
+      impact:
+        "Learned how to correctly structure a codebase and utilize scalable AWS features such as AWS lambda and Dynamo DB",
       links: {
-        live: "https://example.com",
-        repo: "https://github.com/your-username/project-two"
-      }
-    }
+        repo: "https://github.com/SkyBlue43/tweeter-clone",
+      },
+    },
+    {
+      title: "Mandarin Tonal App",
+      summary:
+        "A research project that is a full stack application that helps students learn chinese tones visually",
+      stack: ["Python", "Typescript", "React"],
+      impact:
+        "Learned how to make a full stack application that helps students visually see their tone",
+      links: {
+        repo: "https://github.com/SkyBlue43/mandarin-tonal-app",
+      },
+    },
   ] as Project[],
   skills: [
     {
       category: "Frontend",
-      items: ["Next.js", "React", "TypeScript", "HTML", "CSS", "Accessibility"]
+      items: ["Next.js", "React", "TypeScript", "JavaScript", "HTML", "CSS"],
     },
     {
       category: "Backend / APIs",
-      items: ["Node.js", "REST APIs", "GraphQL"]
+      items: ["Node.js", "Python", "FastAPI", "Java", "C++", "C", "REST APIs"],
     },
     {
-      category: "Tooling",
-      items: ["Git", "Jest", "Playwright", "CI/CD"]
-    }
-  ] as SkillGroup[]
+      category: "Cloud / Data / Tooling",
+      items: [
+        "AWS (EC2, S3, Lambda, API Gateway, CloudFormation)",
+        "SQL",
+        "MySQL",
+        "Supabase",
+        "Git",
+        "Bash",
+      ],
+    },
+  ] as SkillGroup[],
 };
