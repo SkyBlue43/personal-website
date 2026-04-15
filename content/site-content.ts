@@ -34,6 +34,7 @@ export const siteContent = {
     links: {
       linkedin: "https://www.linkedin.com/in/skyler-williams-b8b153345",
       github: "https://github.com/SkyBlue43",
+      website: "#",
       resume: "/resume.pdf",
     },
   },
@@ -115,6 +116,18 @@ export const siteContent = {
         "Learned how to make a full stack application that helps students visually see their tone",
       links: {
         repo: "https://github.com/SkyBlue43/mandarin-tonal-app",
+      },
+    },
+    {
+      title: "Whiskit",
+      summary:
+        "A web app I have been building to deliver a polished, user-friendly recipe experience to others!",
+      stack: ["Next.js", "TypeScript", "React", "Python", "Supabase"],
+      impact:
+        "Focused on using Codex to help me develop a recipe website for others to experience",
+      links: {
+        live: "https://whiskit.org",
+        repo: "https://github.com/SkyBlue43/WhiskIt",
       },
     },
   ] as Project[],

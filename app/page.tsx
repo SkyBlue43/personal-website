@@ -171,6 +171,7 @@ export default function Home() {
             <a href={`mailto:${identity.email}`}>{identity.email}</a>
           </p>
           <div className="link-row">
+            <a href={identity.links.website}>Website</a>
             <a href={identity.links.linkedin}>LinkedIn</a>
             <a href={identity.links.github}>GitHub</a>
             <a href={identity.links.resume}>Resume</a>
